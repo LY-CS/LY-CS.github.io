@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSharp基础·里氏转换 | 林远</title>
+    <meta name="description" content="">
+    <link rel="icon" href="/dog.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.a4aa4dff.css" as="style"><link rel="preload" href="/assets/js/app.9fd1dab7.js" as="script"><link rel="preload" href="/assets/js/2.98c5b9fe.js" as="script"><link rel="preload" href="/assets/js/11.5a6f0e01.js" as="script"><link rel="prefetch" href="/assets/js/10.c0a35b1d.js"><link rel="prefetch" href="/assets/js/12.9a50b603.js"><link rel="prefetch" href="/assets/js/13.341aff56.js"><link rel="prefetch" href="/assets/js/14.562629d9.js"><link rel="prefetch" href="/assets/js/15.71123e54.js"><link rel="prefetch" href="/assets/js/16.a4b71953.js"><link rel="prefetch" href="/assets/js/17.5fb36401.js"><link rel="prefetch" href="/assets/js/18.24cdd1d3.js"><link rel="prefetch" href="/assets/js/19.a49abda3.js"><link rel="prefetch" href="/assets/js/20.d1c0f829.js"><link rel="prefetch" href="/assets/js/21.ad0cc243.js"><link rel="prefetch" href="/assets/js/22.bfff7b41.js"><link rel="prefetch" href="/assets/js/23.ecfd141b.js"><link rel="prefetch" href="/assets/js/24.2d48901e.js"><link rel="prefetch" href="/assets/js/3.45fedb09.js"><link rel="prefetch" href="/assets/js/4.554dccb8.js"><link rel="prefetch" href="/assets/js/5.7e9638fc.js"><link rel="prefetch" href="/assets/js/6.4ab0848e.js"><link rel="prefetch" href="/assets/js/7.032bf3c8.js"><link rel="prefetch" href="/assets/js/8.478567f3.js"><link rel="prefetch" href="/assets/js/9.f2381b29.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a4aa4dff.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">林远</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="technology menu" class="dropdown-title"><span class="title">技术架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/DOTNET/" class="nav-link router-link-active">DOTNET</a></li><li class="dropdown-item"><!----> <a href="/SQL/" class="nav-link">数据库</a></li><li class="dropdown-item"><!----> <a href="/WEB/" class="nav-link">前端架构</a></li><li class="dropdown-item"><!----> <a href="/Certification/" class="nav-link">微软认证</a></li><li class="dropdown-item"><!----> <a href="/PROGRAM/" class="nav-link">项目经验</a></li><li class="dropdown-item"><!----> <a href="/PROGRAM/" class="nav-link">项fghdfghfg</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于我</a></div> <a href="https://github.com/LY-CS" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="technology menu" class="dropdown-title"><span class="title">技术架构</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/DOTNET/" class="nav-link router-link-active">DOTNET</a></li><li class="dropdown-item"><!----> <a href="/SQL/" class="nav-link">数据库</a></li><li class="dropdown-item"><!----> <a href="/WEB/" class="nav-link">前端架构</a></li><li class="dropdown-item"><!----> <a href="/Certification/" class="nav-link">微软认证</a></li><li class="dropdown-item"><!----> <a href="/PROGRAM/" class="nav-link">项目经验</a></li><li class="dropdown-item"><!----> <a href="/PROGRAM/" class="nav-link">项fghdfghfg</a></li></ul></div></div><div class="nav-item"><a href="/about/" class="nav-link">关于我</a></div> <a href="https://github.com/LY-CS" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/DOTNET/" class="sidebar-link">DOTNET·首页</a></li><li><a href="/DOTNET/CSharp基础·字符串.html" class="sidebar-link">CSharp基础·字符串</a></li><li><a href="/DOTNET/CSharp基础·接口&amp;虚方法&amp;抽象类.html" class="sidebar-link">CSharp基础·接口&amp;虚方法&amp;抽象类</a></li><li><a href="/DOTNET/CSharp基础·里氏转换.html" class="active sidebar-link">CSharp基础·里氏转换</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/DOTNET/CSharp基础·里氏转换.html#csharp基础·里氏转换·概念" class="sidebar-link">CSharp基础·里氏转换·概念</a></li><li class="sidebar-sub-header"><a href="/DOTNET/CSharp基础·里氏转换.html#csharp基础·里氏转换·原则" class="sidebar-link">CSharp基础·里氏转换·原则</a></li></ul></li><li><a href="/DOTNET/CSharp基础·面向对象.html" class="sidebar-link">CSharp基础·面向对象</a></li><li><a href="/DOTNET/CSharp基础·进程&amp;线程.html" class="sidebar-link">CSharp基础·进程&amp;线程</a></li><li><a href="/DOTNET/CSharp基础·OOP项目开发.html" class="sidebar-link">CSharp基础·基于OOP的项目开发</a></li><li><a href="/DOTNET/CSharp基础·泛型.html" class="sidebar-link">CSharp基础·泛型</a></li><li><a href="/DOTNET/CSharp基础·字符串.html" class="sidebar-link">CSharp基础·字符串</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="csharp基础·里氏转换"><a href="#csharp基础·里氏转换" class="header-anchor">#</a> CSharp基础·里氏转换</h1> <h2 id="csharp基础·里氏转换·概念"><a href="#csharp基础·里氏转换·概念" class="header-anchor">#</a> CSharp基础·里氏转换·概念</h2> <p>在C#中与继承相理解：建立一个抽象的父类，而父类中没有具体的方法体，所以要通过具体的子类替换掉父类来实现功能。</p> <p>延伸理解：儿子终有一天要变成父亲来继承父业。在这里儿子指子类，父亲指父类，继承父业就指代实现功能。</p> <p>作用：我们可以将所有的子类都当作是父类来看，针对父类进行编程，写出通用的代码，使用需求的不断改变。</p> <p>注：该例子中，使用Teacher、Student为子类，它们分别有SayHi()与SayHello()方法；而Person为父类，有Say()方法。</p> <p>1.不可替换的情况</p> <p>1.1 父类对象不可隐式替换掉子类</p> <div class="language- extra-class"><pre class="language-text"><code>Person p2 = new Person();
+Teacher t2 = new Teacher();
+t2 = p2;
+</code></pre></div><p>简单来讲就是Teacher t2 = new Person();系统会报错</p> <p>1.2 父类对象不能强制替换子类</p> <div class="language- extra-class"><pre class="language-text"><code>Person p3 = new Person();
+Teacher t3 = new Teacher();
+t3 = (Teacher)p3;
+</code></pre></div><p>强制转化后，编译过程不报错了，但在运行时依旧会报错。看来父类强行替换子类这条道路是行不通的。</p> <p>1.3 子类不可替换另一子类：new的是子类却要替换另一个子类</p> <div class="language- extra-class"><pre class="language-text"><code>Person p5 = new Teacher();
+Student s5 = (Student)p5;
+</code></pre></div><p>代码中，Teacher类替换了Person类，但却又要替换另一个Student类。</p> <p>2.可以替换的情况</p> <p>2.1 子类可以直接隐式替换父类</p> <div class="language- extra-class"><pre class="language-text"><code>Person p1 = new Teacher();
+p1.Say();
+</code></pre></div><p>代码讲解：实例化一个父类变量，但new子类，即转化成了子类（被子类替换），而之后这个变成子类的p1也可以顺利地使用父类的方法Say()。但原属于Teacher类的SayHi方法就不能使用了，因为它现在已经变成父类了。</p> <h2 id="csharp基础·里氏转换·原则"><a href="#csharp基础·里氏转换·原则" class="header-anchor">#</a> CSharp基础·里氏转换·原则</h2> <p>（1）子类可以赋值给父类，但父类不会有子类的字段、属性、方法（如果有一个地方需要一个父类作为参数，我们可以用一个子类代替）</p> <div class="language- extra-class"><pre class="language-text"><code>         string str =string.Join(&quot;|&quot;,new string[] { &quot;1&quot;, &quot;2&quot;,&quot;3&quot;, &quot;4&quot; });
+</code></pre></div><p>Join第二参数为Object类，它是父类，此时我们可以用string子类来代替父类</p> <p>（2）如果父类中装的是子类对象，那么可以将这个父类强转为子类对象。</p> <p>注：如果一个子类继承了一个父类，那么这个子类除了可以使用自己的成员外，还可以使用从父类那里继承过来的成员。但是父类永远都只能使用自己的成员，而不能使用子类的成员。</p> <p>【is和as】</p> <p>is：表示类型转换，只是进行判断，但是并没有进行转换，如果能够转换成功，则返回一个true，否则返回一个false</p> <p>as：表示类型转换，直接转换，如果能够转换则返回对应的对象，否则返回一个null</p> <div class="language- extra-class"><pre class="language-text"><code>举例is：
+
+          Person p = new Student();
+          if (p is Student)
+           {
+                   Console.WriteLine(&quot;可以转成Student类&quot;);
+           }
+           else
+           {
+                    Console.WriteLine(&quot;不可以转成Student类&quot;);
+           }
+举例as：
+        Person p = new Student();
+        Student t = p as Student;
+</code></pre></div><p>里氏转换实例代码演示：</p> <div class="language- extra-class"><pre class="language-text"><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _里氏转换
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //员工九点打卡  经理11点打卡 程序猿不打卡
+
+            Employee emp = new Employee();
+            // emp.DaKa();
+            Manager m = new Manager();
+            //m.DaKa();
+            Programmer p = new Programmer();
+            //p.DaKa();
+
+            Employee e = m;
+
+            Employee[] emps = { emp, m, p };
+            for (int i = 0; i &lt; emps.Length; i++)
+            {
+                if (emps[i] is Manager)
+                {
+                    ((Manager)emps[i]).DaKa();
+                }
+                else if (emps[i] is Programmer)
+                {
+                    ((Programmer)emps[i]).DaKa();
+                }
+                else
+                {
+                    emps[i].DaKa();
+                }
+                emps[i].DaKa();
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+    class Employee
+    {
+        public virtual void DaKa()
+        {
+            Console.WriteLine(&quot;员工九点打卡&quot;);
+        }
+    }
+
+    class Manager : Employee
+    {
+        public override void DaKa()
+        {
+            Console.WriteLine(&quot;经理11点打卡&quot;);
+        }
+    }
+
+    class Programmer : Employee
+    {
+        public override void DaKa()
+        {
+            Console.WriteLine(&quot;程序猿不打卡&quot;);
+        }
+    }
+}
+
+</code></pre></div><hr> <p>参考文献：</p> <p>·https://blog.csdn.net/Marshallren/article/details/87521733</p> <p>·https://blog.csdn.net/songyi160/article/details/50706308</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/DOTNET/CSharp基础·接口&amp;虚方法&amp;抽象类.html" class="prev">CSharp基础·接口&amp;虚方法&amp;抽象类</a></span> <span class="next"><a href="/DOTNET/CSharp基础·面向对象.html">CSharp基础·面向对象</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9fd1dab7.js" defer></script><script src="/assets/js/2.98c5b9fe.js" defer></script><script src="/assets/js/11.5a6f0e01.js" defer></script>
+  </body>
+</html>
