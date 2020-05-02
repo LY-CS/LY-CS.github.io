@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			background: url("images/bg.jpg") no-repeat center/cover;
+			/*设置大的背景图片*/
+		}
+
+		.cube {
+			position: relative;
+			width: 300px;
+			height: 300px;
+			margin: 180px auto 0;
+			transform-style: preserve-3d;
+			/*开启父级盒子的3d属性,能容纳子盒子*/
+			animation: roll 4s linear infinite;
+			/*定义动画*/
+		}
+
+		.smaller-cube {
+			position: relative;
+			width: 150px;
+			height: 150px;
+		}
+
+		@keyframes roll {
+			0% {
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+
+
+			100% {
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+
+		/* @keyframes roll {
+			form {
+				tranform: rotateX(0deg) rotateY(0deg);
+			}
+			to {
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		} */
+
+		.cube .small {
+			position: absolute;
+			/*把六个相同的盒子叠在一起*/
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 300px;
+			font-size: 50px;
+			text-align: center;
+			line-height: 300px;
+			perspective: 1000px;
+			/*给子元素添加视距*/
+			transition: .2s linear;
+		}
+
+		.cube .smaller {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 150px;
+			height: 150px;
+			background: url("images/7.jpg") center/cover;
+			transition: .3s linear;
+		}
+
+		.cube .small:nth-child(1) {
+			transform: rotateX(90deg) translateZ(150px) scale(0);
+			background: url("images/1.jpg") center/cover;
+			box-shadow: 0 0 30px blue,
+				0 0 50px lightgreen;
+			border-radius: 20px;
+		}
+
+		.cube .small:nth-child(2) {
+			transform: rotateX(-90deg) translateZ(150px) scale(0);
+			background: url("images/2.jpg") center/cover;
+			box-shadow: 0 0 30px blue,
+				0 0 50px lightgreen;
+			border-radius: 20px;
+		}
+
+		.cube .small:nth-child(3) {
+			transform: rotateY(-90deg) translateZ(150px) scale(0);
+			background: url("images/3.jpg") center/cover;
+			box-shadow: 0 0 30px blue,
+				0 0 50px lightgreen;
+			border-radius: 20px;
+		}
+
+		.cube .small:nth-child(4) {
+			transform: rotateY(90deg) translateZ(150px) scale(0);
+			background: url("images/4.jpg") center/cover;
+			box-shadow: 0 0 30px blue,
+				0 0 50px lightgreen;
+			border-radius: 20px;
+		}
+
+		.cube .small:nth-child(5) {
+			transform: rotateY(180deg) translateZ(150px) scale(0);
+			background: url("images/5.jpg") center/cover;
+			box-shadow: 0 0 30px blue,
+				0 0 50px lightgreen;
+			border-radius: 20px;
+		}
+
+		.cube .small:nth-child(6) {
+			transform: rotateY(0deg) translateZ(150px) scale(0);
+			background: url("images/6.jpg") center/cover;
+			box-shadow: 0 0 30px blue,
+				0 0 50px lightgreen;
+			border-radius: 20px;
+		}
+
+
+		/*small的hover效果*/
+		.cube:hover .small:nth-child(1) {
+			transform: rotateX(90deg) translateZ(250px);
+		}
+
+		.cube:hover .small:nth-child(2) {
+			transform: rotateX(-90deg) translateZ(250px);
+		}
+
+		.cube:hover .small:nth-child(3) {
+			transform: rotateY(-90deg) translateZ(250px);
+		}
+
+		.cube:hover .small:nth-child(4) {
+			transform: rotateY(90deg) translateZ(250px);
+		}
+
+		.cube:hover .small:nth-child(5) {
+			transform: rotateY(180deg) translateZ(250px);
+		}
+
+		.cube:hover .small:nth-child(6) {
+			transform: rotateY(0deg) translateZ(250px);
+		}
+
+
+
+		/*smaller的立体盒子*/
+		.cube .smaller:nth-child(1) {
+			transform: rotateX(90deg) translateZ(75px) scale(0);
+		}
+
+		.cube .smaller:nth-child(2) {
+			transform: rotateX(-90deg) translateZ(75px) scale(0);
+		}
+
+		.cube .smaller:nth-child(3) {
+			transform: rotateY(-90deg) translateZ(75px) scale(0);
+		}
+
+		.cube .smaller:nth-child(4) {
+			transform: rotateY(90deg) translateZ(75px) scale(0);
+		}
+
+		.cube .smaller:nth-child(5) {
+			transform: rotateY(180deg) translateZ(75px) scale(0);
+		}
+
+		.cube .smaller:nth-child(6) {
+			transform: rotateY(0deg) translateZ(75px) scale(0);
+		}
+
+		/* smaller的立体效果*/
+		.cube:hover .smaller:nth-child(1) {
+			transform: rotateX(90deg) translateZ(75px);
+		}
+
+		.cube:hover .smaller:nth-child(2) {
+			transform: rotateX(-90deg) translateZ(75px);
+		}
+
+		.cube:hover .smaller:nth-child(3) {
+			transform: rotateY(-90deg) translateZ(75px);
+		}
+
+		.cube:hover .smaller:nth-child(4) {
+			transform: rotateY(90deg) translateZ(75px);
+		}
+
+		.cube:hover .smaller:nth-child(5) {
+			transform: rotateY(180deg) translateZ(75px);
+		}
+
+		.cube:hover .smaller:nth-child(6) {
+			transform: rotateY(0deg) translateZ(75px);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="cube">
+		<div class="small"></div>
+		<div class="small"></div>
+		<div class="small"></div>
+		<div class="small"></div>
+		<div class="small"></div>
+		<div class="small"></div>
+
+		<div class="smaller-cube">
+			<div class="smaller"></div>
+			<div class="smaller"></div>
+			<div class="smaller"></div>
+			<div class="smaller"></div>
+			<div class="smaller"></div>
+			<div class="smaller"></div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
